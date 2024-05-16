@@ -13,9 +13,32 @@ namespace LoginServer.Redis
             _redisDb = _redisConn.GetDatabase();
         }
 
-        public void SetKeyValue(string key, string value)
+        public async Task<bool> StoreAccount(string userID, string value)
         {
-            _redisDb.StringSet(key, value);
+            try
+            {
+                var result = await _redisDb.SetAddAsync(userID, value);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
+        public async Task<bool> RemoveAccount(string userID)
+        {
+            try 
+            {
+                var result = await _redisDb.KeyDeleteAsync(userID);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }            
         }
 
         public string? GetValue(string key)
@@ -23,31 +46,9 @@ namespace LoginServer.Redis
             return _redisDb.StringGet(key);
         }
 
-        public void RemoveKey(string key)
-        {
-            _redisDb.KeyDelete(key);
-        }
-
-        // 3 !! 
-        
-        // 
-
-        //test 
-        // 
-        public async Task<bool> StoreAccount(string userID)
-        {
-            // redis ! 
-            try
-            {
-                var result = await _redisDb.SetAddAsync("sdf", "sdf");
-                
-            }
-            catch (Exception ex) 
-            {
-                
-            }
-           
-        }
+       
+       
+      
 
     }
 }

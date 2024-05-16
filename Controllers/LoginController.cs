@@ -82,12 +82,20 @@ namespace LoginServer.Controllers
 
             try
             {
-                string tokenString = _tokenGenerator.MakeToken(loginRequest);
-                await _mySqlRepository.SaveToken(loginRequest.UserID, tokenString);
+                string acceptTokenString = _tokenGenerator.MakeToken(loginRequest);
+                await _mySqlRepository.SaveToken(loginRequest.UserID, acceptTokenString);
 
                 string refreshToken = _tokenGenerator.MakeRefreshToken();
-                _redis.SetKeyValue(loginRequest.UserID, refreshToken);
-                return Ok(new { Token = tokenString, RefreshToken = refreshToken });
+                var redisResult = await _redis.StoreAccount(loginRequest.UserID, acceptTokenString);
+
+                if(redisResult == true)
+                {
+                    return Ok(new { Token = acceptTokenString, RefreshToken = refreshToken });
+                }
+
+                loginResponse.ErrorCode = ErrorCode.Fail;
+                return BadRequest(loginResponse);
+
             }
             catch (Exception ex)
             {

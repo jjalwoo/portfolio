@@ -32,10 +32,18 @@ namespace LoginServer.Controllers
                 return logoutResponse.ErrorCode;
             }
 
-            logoutResponse.ErrorCode = ErrorCode.LogoutSuccess;
-            await _mySqlRepository.DeleteToken(logoutRequest.UserID!);
+            var removeResult = await _redis.RemoveAccount(logoutRequest.UserID!);
+
+            if(removeResult == true)
+            {
+                logoutResponse.ErrorCode = ErrorCode.LogoutSuccess;
+                await _mySqlRepository.DeleteToken(logoutRequest.UserID!);
+            }
+            else
+            {
+                logoutResponse.ErrorCode = ErrorCode.Fail;
+            }            
             
-            _redis.RemoveKey(logoutRequest.UserID!);
             return logoutResponse.ErrorCode;           
         }
     }
