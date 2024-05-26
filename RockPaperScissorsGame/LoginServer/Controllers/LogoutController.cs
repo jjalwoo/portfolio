@@ -37,7 +37,7 @@ namespace LoginServer.Controllers
             if(removeResult == true)
             {
                 logoutResponse.ErrorCode = ErrorCode.LogoutSuccess;
-                await _mySqlRepository.DeleteToken(logoutRequest.UserID!);
+                // await _mySqlRepository.DeleteToken(logoutRequest.UserID!);
             }
             else
             {

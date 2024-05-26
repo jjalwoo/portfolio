@@ -44,11 +44,7 @@ namespace LoginServer.Redis
         public string? GetValue(string key)
         {
             return _redisDb.StringGet(key);
-        }
-
-       
-       
-      
+        }     
 
     }
 }
