@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6WWov5ppnohEEillDvYZBJcNXXf3ldHjFABW5+iZvj6Is8SwnkjZyVFc4Lc/KmvCuunSx5UngeTaa2KlaTD05Q==",
+  "dgSpecHash": "rJVSdGMG8xcEqiM6mAVzuSuXlgQpN835t8dwh39cvxmJWAf/rcnc4fDGXCE7QbWAClSNzpHhWaSBqIVBvYiuUA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\OneDrive\\바탕 화면\\C#서버\\RockPaperScissorsGame\\LoginServer\\LoginServer.csproj",
+  "projectFilePath": "C:\\Users\\user\\OneDrive\\바탕 화면\\C#서버\\portfolio\\RockPaperScissorsGame\\LoginServer\\LoginServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",

@@ -2698,11 +2698,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\OneDrive\\바탕 화면\\C#서버\\RockPaperScissorsGame\\LoginServer\\LoginServer.csproj",
+      "projectUniqueName": "C:\\Users\\user\\OneDrive\\바탕 화면\\C#서버\\portfolio\\RockPaperScissorsGame\\LoginServer\\LoginServer.csproj",
       "projectName": "LoginServer",
-      "projectPath": "C:\\Users\\user\\OneDrive\\바탕 화면\\C#서버\\RockPaperScissorsGame\\LoginServer\\LoginServer.csproj",
+      "projectPath": "C:\\Users\\user\\OneDrive\\바탕 화면\\C#서버\\portfolio\\RockPaperScissorsGame\\LoginServer\\LoginServer.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\OneDrive\\바탕 화면\\C#서버\\RockPaperScissorsGame\\LoginServer\\obj\\",
+      "outputPath": "C:\\Users\\user\\OneDrive\\바탕 화면\\C#서버\\portfolio\\RockPaperScissorsGame\\LoginServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
